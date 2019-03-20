@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta
+content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+name="viewport" />
+
+<title>学生入驻</title>
+<!-- <link rel="stylesheet" href="css/main.css" /> -->
+<!-- <link href="https://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
+
+</head>
+<style>
+	dd{margin: 0;padding: 0}
+	dt,dd{
+		display: inline-block;
+		/* font-size: 0; */
+		width: 24%;
+		height: 40px;
+		/* font-size: 14px; */
+		background: #ccc;
+	}
+	dt{
+		margin: 0;
+	}
+	dd{
+		background: url(./images/unselected.png);
+		background-repeat: no-repeat;
+		background-size: 100% 40px;
+	}
+	.dd-active{
+		background: url(./images/selected.png);
+		background-repeat: no-repeat;
+		background-size: 100% 40px;
+	}
+</style>
+<body> 
+		<!-- <div id="en" style="margin-top:50px;">
+				<a  class="mock-checkbox"><span>日语</span></a>
+				<a  class="mock-checkbox"><span>韩语</span></a>
+				<a  class="mock-checkbox"><span>英语</span></a>
+				<textarea class="login-box-cen-form-textarea w358 h88" style="margin-top:10px" id="login_info" placeholder="其他语种"></textarea>
+		</div>
+		<div id="radio" style="margin-top:50px;">
+				<a  class="mock-checkbox"><span>初级</span></a>
+				<a  class="mock-checkbox"><span>中级</span></a>
+				<a  class="mock-checkbox checkbox-active"><span>入门</span></a>
+				<a  class="mock-checkbox"><span>高级</span></a>
+		</div>		 -->
+		<button id="btn">提交</button>
+
+
+				<dl> 
+					<dt>星期</dt> 
+					<dd >上午</dd> 
+					<dd>下午</dd> 
+					<dd>晚上</dd> 
+				</dl> 
+				<dl id="Mon"> 
+					<dt>星期一</dt> 
+					<dd name='上午'></dd> 
+					<dd>下午</dd> 
+					<dd>晚上</dd> 
+				</dl> 
+				<dl id="Tues"> 
+					<dt>星期二</dt> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+				</dl> 
+				<dl id="wed"> 
+					<dt>星期三</dt> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+				</dl> 
+				<dl id="Thur"> 
+					<dt>星期四</dt> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+				</dl> 
+				<dl id="Fri"> 
+					<dt>星期五</dt> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+				</dl> 
+				<dl id="sat"> 
+					<dt>星期六</dt> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+				</dl> 
+				<dl id="sun"> 
+					<dt>星期日</dt> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+					<dd>1</dd> 
+				</dl> 
+			
+
+	
+    <script type="text/javascript" src="js/jquery.min.js"></script>  
+    <script type="text/javascript" src="js/tbdValidate.js"></script>  
+<!-- 	<script src="https://www.jq22.com/jquery/bootstrap-3.3.4.js"></script> -->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	
+	<script src="js/distpicker.data.js"></script>
+	<script src="js/distpicker.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// var arr=[],str='入门';
+			// $("div#en").on("click","a",function(){      //只需要找到你点击的是哪个ul里面的就行
+			// 	if($(this).hasClass("checkbox-active")){
+			// 		$(this).removeClass("checkbox-active");
+			// 		arr.splice(arr.indexOf($(this).text()),1);
+			// 	}else{
+			// 		$(this).addClass("checkbox-active");
+			// 		arr.push($(this).text());
+			// 	}
+			// 	// return arr;
+			// });
+			// // console.log('arr'+arr)
+			// $("div#radio").on("click","a",function(){      //只需要找到你点击的是哪个ul里面的就行
+			// 	$(this).addClass("checkbox-active").siblings().removeClass("checkbox-active");
+			// 	str=$(this).text()
+			// 	// return str;
+			// });
+			// console.log('str'+str);
+			var mon=[],Tues=[],wed=[],Thur=[],Fri=[],sat=[],sun=[]
+			$("#Mon").on("click","dd",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					mon.splice(mon.indexOf($(this).text()),1);
+				}else{
+					$(this).addClass("dd-active");
+					mon.push($(this).attr('name'));
+				}
+				console.log(mon)
+			})
+			$("#Tues").on("click","dd",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					Tues.splice(Tues.indexOf($(this).text()),1);
+				}else{
+					$(this).addClass("dd-active");
+					Tues.push($(this).text());
+				}
+				console.log(Tues)
+			})
+			$("#wed").on("click","dd",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					wed.splice(wed.indexOf($(this).text()),1);
+				}else{
+					$(this).addClass("dd-active");
+					wed.push($(this).text());
+				}
+				console.log(wed)
+			})
+			$("#Thur").on("click","dd",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					Thur.splice(Thur.indexOf($(this).text()),1);
+				}else{
+					$(this).addClass("dd-active");
+					Thur.push($(this).text());
+				}
+				console.log(mon)
+			})
+			$("#Fri").on("click","dd",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					Fri.splice(Fri.indexOf($(this).text()),1);
+				}else{
+					$(this).addClass("dd-active");
+					Fri.push($(this).text());
+				}
+				console.log(Fri)
+			})
+			$("#sat").on("click","dd",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					sat.splice(sat.indexOf($(this).text()),1);
+				}else{
+					$(this).addClass("dd-active");
+					sat.push($(this).text());
+				}
+				console.log(sat)
+			})
+			$("#sun").on("click","dd",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					sun.splice(sun.indexOf($(this).text()),1);
+				}else{
+					$(this).addClass("dd-active");
+					sun.push($(this).text());
+				}
+				console.log(sun)
+			})
+			$("#btn").on('click',function(){
+				console.log(arr)
+				console.log(str)
+			})
+		});
+		
+			
+		
+		
+	</script>
+</body>
+</html>

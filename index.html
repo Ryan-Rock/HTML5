@@ -1,0 +1,572 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta
+content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+name="viewport" />
+
+<title>学生入驻</title>
+<link rel="stylesheet" href="css/main.css" />
+<!-- <link href="https://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="css/bootstrap.css" />
+
+</head>
+
+<body> 
+<!--    <form>   -->
+<!-- 	 <select class="lan_select">   -->
+<!-- 		 <option class="lan_zh">中文</option>   -->
+<!-- 		 <option class="lan_jk">日文</option>   -->
+<!-- 	 </select> -->
+<!--  </form>   -->
+
+    <div class="ph_xs"></div>    
+    <h3 style="font-size:20px; text-align:center; font-weight:bold;"><font color="#27dfce" data-sw-translate="">学生入驻</font></h3>
+    <br/>
+	<!--中心-->
+    <div class="content">
+    	<div class="register-box">
+        	<div class="wrap">
+                <div class="register-box-con2">             	
+                    <div class="register-box-con2-box clearfix mar-bottom20">
+                    	<label class="register-box-con2-box-left"><em class="bitian"></em>真実の名前</label>
+                        <div class="register-box-con2-box-right">
+                        	<input type="text" class="login-box-cen-form-input w358" placeholder="请输入真实姓名" id="login_name"/>
+                        	<label id="err_name_text"  class="err err-top40">请输入真实姓名</label>
+                        </div>
+                    </div>
+                    <div class="register-box-con2-box clearfix mar-bottom20">
+                    	<label class="register-box-con2-box-left"><em class="bitian"></em>手机号码</label>
+                        <div class="register-box-con2-box-right">
+                        	<input type="text" class="login-box-cen-form-input w358" placeholder="请输入手机号码" id="login_phone" />
+                        	<label id="err_phone_text" class="err err-top40">手机号错误</label>
+                        </div>
+                    </div>
+					<div class="register-box-con2-box clearfix mar-bottom20">
+                    	<label class="register-box-con2-box-left"><em class="bitian"></em>验证码</label>
+                        <div class="register-box-con2-box-right">
+                        	<input type="text" class="login-box-cen-form-input w228" placeholder="短信验证码" id="login_mescode" />
+							<button class="login-box-cen-form-mes w120 mar-left10" id="reg_mescode_btn" able="able">获取验证码</button>
+							<label class="err err-top40" id="err_mescode_text">短信验证码错误</label>
+                        </div>
+                    </div>
+                    <div class="register-box-con2-box clearfix mar-bottom20">
+                    	<label class="register-box-con2-box-left"><em class="bitian"></em>微信号</label>
+                        <div class="register-box-con2-box-right">
+                        	<input type="text" class="login-box-cen-form-input w228" placeholder="请输入微信号" id="login_wx" />
+							<button class="login-box-cen-form-mes w120 mar-left10" id="getPhone" able="able">同手机号码</button>
+                        	<label class="err err-top40" id="err_wx_text">微信号错误</label>
+                        </div>
+					</div>
+					<div class="teacher-level">
+						<label class="register-box-con2-box-left"><em class="bitian"></em>教师级别</label>
+						<div class="register-box-con2-box-right">
+							<p class="selet-teacher-tip">请您选择教师级别</p>
+							<div id="radio">
+								<a  class="mock-radio checkbox-active"><span>入门</span></a>
+								<a  class="mock-radio"><span>初级</span></a>
+								<a  class="mock-radio"><span>中级</span></a>
+								<a  class="mock-radio"><span>高级</span></a>
+							</div>
+                        </div>
+					</div>    
+					<div class="register-box-con2-box clearfix mar-bottom20">
+                    	<label class="register-box-con2-box-left"><em class="bitian"></em>授课教材</label>
+                        <div class="register-box-con2-box-right">
+                        	<textarea class="login-box-cen-form-textarea w358 h88" style="margin-top:10px;width:95%" id="login_info" placeholder="请填写您可授课的教材，根据您可授课的教材，匹配对应的学员"></textarea>
+                        	<label class="err err-top90" id="err_info_textarea">说明详细的授课时间，比如：周一到周五晚上 18:00 - 22:00</label>
+                        </div>
+					</div>       
+					<div class="teacher-level">
+						<label class="register-box-con2-box-left"><em class="bitian"></em>媒介语</label>
+						<div class="register-box-con2-box-right">
+							<p class="selet-teacher-tip">您需要的媒介语</p>
+							<div id="en" style="font-size: 24px;">
+								<a  class="mock-checkbox"><span>日语</span></a>
+								<a  class="mock-checkbox"><span>韩语</span></a>
+								<a  class="mock-checkbox"><span>英语</span></a>
+								<textarea class="login-box-cen-form-textarea w358 h88" style="margin-top:10px;width:95%" id="login_info" placeholder="其他语种"></textarea>
+							</div>
+                        </div>
+					</div>    
+					<!-- 授课范围 -->
+					<div class="register-box-con2-box clearfix mar-bottom20">
+						<label class="register-box-con2-box-left"><em class="bitian"></em>授课范围</label>
+						<div class="register-box-con2-box-right" style="margin-top:10px;border:1px solid #27dfce;width:65%">
+							<ul id="myTab" class="nav">
+									<li class="active">
+										<a href="#home" class="tab-title tab-left" data-toggle="tab">教师外派</a>
+									</li>
+									<li><a href="#ios" class="tab-title" data-toggle="tab">viivbook教室</a></li>
+							</ul>
+							<div id="myTabContent" class="tab-content">
+								<div class="tab-pane fade in active" id="home">
+									<p style="padding-left: 4px;margin-top: 8px;opacity: 0.8;">教师会到您要上课地点进行授课</p>
+									<form class="form-inline">
+										<div data-toggle="distpicker">
+											<div class="form-group">
+											<label class="sr-only" for="province1">Province</label>
+											<select class="form-control" id="province" style="width:30%;float:left;margin: auto 2px;border:1px solid #27dfce;"></select>
+											</div>
+											<div class="form-group">
+											<label class="sr-only" for="city1">City</label>
+											<select class="form-control" id="city" style="width:30%;float:left;margin: auto 2px;border:1px solid #27dfce;"></select>
+											</div>
+											<div class="form-group">
+											<label class="sr-only" for="district1">District</label>
+											<select class="form-control" id="district" style="width:30%;float:left;margin: auto 2px;border:1px solid #27dfce;"></select>
+											</div>
+										</div>
+										</form>
+										<div class="adress">
+											<input type="text" class="login-box-cen-form-input adressinput" placeholder="大体地址（不会泄露您的地址" id="adress" />
+										</div>
+										
+										<label class="err err-top40" id="err_area_text" style="margin-top:8px;">区域错误</label>
+
+								</div>
+								<div class="tab-pane fade" id="ios">
+									<p style="padding-left: 4px;margin-top: 8px;opacity: 0.8;">选择您与教师可以上课的viivbook教室</p>
+									<ul id="selectAdress">
+										<li class="adressList">
+										 	 <span> 天津市滨海新区开发区第二大街展望路2号</span>
+										</li>
+										<li class="adressList">
+												<span>【九河校区】天津市河东区卫国道140号</span>
+										</li>
+										<li class="adressList">
+												<span>【奥林匹克大厦校区】天津市和平区西康路松乐里3号楼1门101室</span>
+										</li>
+										<li class="adressList">
+												<span> 【南京路校区】南京路235号河川大厦A座29层</span>
+										</li>
+										<!-- <li>
+											<label>
+													<input type="radio" name="adressRadio" id="adressRadio3" value="option1" > 【南京路校区】南京路235号河川大厦A座29层
+											</label>
+										</li> -->
+									</ul>
+								
+							</div>
+							</div>
+						</div>
+						
+                        </div>
+                    </div>
+					<!-- <div class="register-box-con2-box clearfix mar-bottom20">
+                    	<label class="register-box-con2-box-left"><em class="bitian"></em>授课范围</label>
+                        <div class="register-box-con2-box-right" style="margin-top:-8px;">             
+						<form class="form-inline">
+						  <div data-toggle="distpicker">
+							<div class="form-group">
+							  <label class="sr-only" for="province1">Province</label>
+							  <select class="form-control" id="province" style="width:30%;float:left;margin: auto 2px;border:1px solid #27dfce;"></select>
+							</div>
+							<div class="form-group">
+							  <label class="sr-only" for="city1">City</label>
+							  <select class="form-control" id="city" style="width:30%;float:left;margin: auto 2px;border:1px solid #27dfce;"></select>
+							</div>
+							<div class="form-group">
+							  <label class="sr-only" for="district1">District</label>
+							  <select class="form-control" id="district" style="width:30%;float:left;margin: auto 2px;border:1px solid #27dfce;"></select>
+							</div>
+						  </div>
+						</form>
+						<label class="err err-top40" id="err_area_text" style="margin-top:8px;">区域错误</label>
+
+												
+                        </div>
+                    </div> -->
+					<!-- <div class="register-box-con2-box clearfix mar-bottom20">
+						<label class="register-box-con2-box-left"><em class="bitian"></em></label>
+						<label class="register-box-con2-box-left" style="float:left;width:46%;font-size:1rem;color:#999999;text-align:left;padding-left:20px">会根据您的授课范围匹配教师</label>
+                    	<button class="login-box-cen-form-mes w100 mar-left10" style="float:right;margin-right:11%;" id="areaAdd" able="able">添加</button>		
+                    </div> -->
+					<div class="register-box-con2-box clearfix mar-bottom20" id="areaDiv" style="display:none;">
+                    	<label class="register-box-con2-box-left"><em class="bitian"></em></label>
+                        <div class="register-box-con2-box-right" id ="appeadDiv">             
+							<input type="hidden" class="login-box-cen-form-input w228" id="login_time" />
+
+                        </div>
+                    </div>
+                    <div class="register-box-con2-box clearfix mar-bottom20">
+                    	<label class="register-box-con2-box-left"><em class="bitian"></em>授课时间</label>
+                        <div class="register-box-con2-box-right">
+								<ul class="title-day"> 
+									<p>星期</p> 
+									<li>上午</li> 
+									<li>下午</li> 
+									<li>晚上</li> 
+								</ul> 
+								<ul class="list-day" id="Mon"> 
+									<p>星期一</p> 
+									<li name='上午'><span class="glyphicon glyphicon-search" aria-hidden="true"></span></li> 
+									<li name='下午'>&nbsp;</li> 
+									<li name='晚上'>&nbsp;</li> 
+								</ul> 
+								<ul class="list-day" id="Tues"> 
+									<p>星期二</p> 
+									<li name='上午'>&nbsp;</li> 
+									<li name='下午'>&nbsp;</li> 
+									<li name='晚上'>&nbsp;</li> 
+								</ul> 
+								<ul class="list-day" id="wed"> 
+									<p>星期三</p> 
+									<li name='上午'>&nbsp;</li>  
+									<li name='下午'>&nbsp;</li> 
+									<li name='晚上'>&nbsp;</li> 
+								</ul> 
+								<ul class="list-day" id="Thur"> 
+									<p>星期四</p> 
+									<li name='上午'>&nbsp;</li> 
+									<li name='下午'>&nbsp;</li> 
+									<li name='晚上'>&nbsp;</li>  
+								</ul> 
+								<ul class="list-day" id="Fri"> 
+									<p>星期五</p> 
+									<li name='上午'>&nbsp;</li>  
+									<li name='下午'>&nbsp;</li> 
+									<li name='晚上'>&nbsp;</li> 
+								</ul> 
+								<ul class="list-day" id="sat"> 
+									<p>星期六</p> 
+									<li name='上午'>&nbsp;</li> 
+									<li name='下午'>&nbsp;</li> 
+									<li name='晚上'>&nbsp;</li> 
+								</ul> 
+								<ul class="list-day" id="sun"> 
+									<p>星期日</p> 
+									<li name='上午'>&nbsp;</li> 
+									<li name='下午'>&nbsp;</li> 
+									<li name='晚上'>&nbsp;</li> 
+								</ul> 
+                        	<!-- <textarea class="login-box-cen-form-textarea w358 h88" id="login_info" placeholder="说明详细的授课时间，比如：周一到周五晚上 18:00 - 22:00"></textarea>
+                        	<label class="err err-top90" id="err_info_textarea">说明详细的授课时间，比如：周一到周五晚上 18:00 - 22:00</label> -->
+                        </div>
+                    </div>                    
+                    <div class="register-box-con2-box clearfix mar-bottom20 mar-top20">	
+                        <div class="register-box-con2-box-right" style="width:84%">
+						<!--
+						    <label class="register-box-con2-box-left" style="width:44%;font-size:1rem;color:#999999">会根据您的授课范围匹配教师，便于授课</label>
+						-->
+						<button class="login-box-cen-form-mes w500 mar-left10" style="margin-left:25%;" id="reg_info_submit" able="able">写好了，提交入驻</button>	
+                        </div>
+                    </div>
+                </div>
+            </div>        	
+        </div>	
+    </div>
+    <br/>
+    <br/>
+    <br/>
+	
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>  
+    <script type="text/javascript" src="js/tbdValidate.js"></script>  
+    <script type="text/javascript" src="js/upload.js"></script> 
+<!-- 	<script src="https://www.jq22.com/jquery/bootstrap-3.3.4.js"></script> -->
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	
+	<script src="js/distpicker.data.js"></script>
+	<script src="js/distpicker.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		
+			$('body').on('click','.spanbox',function(){		
+				$(this).parent().remove();
+				var areabox = $(".areabox").html();
+				if(!areabox)$("#areaDiv").hide();
+			})
+			
+			$("#reg_info_submit").click(function(){	
+				var getArea="";
+				$(".getArea").each(function(){
+					if(!$(this).val()){
+		             getArea += $(this).text()+"|"            
+        			}
+				});
+				$("#login_time").val(getArea);
+				console.log(getArea)
+				saveStu();
+			})
+			
+			//demo2
+			var regconfig=[
+					{eleinput:"login_name",eletext:"err_name_text",rule:[{reg:/^.+$/,text:"请输入姓名"},{reg:/^.{1,20}$/,text:"真实姓名不超过20个字"}]},
+					{eleinput:"login_phone",eletext:"err_phone_text",rule:[{reg:/^.+$/,text:"请输入手机号码"},{reg:/^1[34578]\d{9}$/,text:"手机号格式错误"}]},				
+					{eleinput:"login_mescode",eletext:"err_mescode_text",rule:[{reg:/^.+$/,text:"请输入短信验证码"},{reg:/^[0-9]{4}$/,text:'请输入正确验证码'}]},
+					{eleinput:"login_wx",eletext:"err_wx_text",rule:[{reg:/^.+$/,text:"请输入微信号"},{reg:/^.{1,20}$/,text:"微信号不超过20个字"}]},
+					{eleinput:"login_info",eletext:"err_info_textarea",rule:[{reg:/^.{0,200}$/,text:"请输入授课时间，以便于准确的安排时间"}]},		
+					{eleinput:"login_time",eletext:"err_area_text",rule:[{reg:/^.+$/,text:"请输入授课地点"}]},	
+				];
+				
+			var regconfig2=[
+					{eleinput:"login_phone",eletext:"err_phone_text",rule:[{reg:/^.+$/,text:"请输入手机号"},{reg:/^1[34578]\d{9}$/,text:"手机号格式错误"}]}							
+				];	
+			tbdValidate(
+				regconfig,
+				{
+					elesubmit:"reg_info_submit",//提交按钮
+					funsubmit:function(){//验证通过可提交回调
+						if($("#reg_info_file_base64").attr("src")){
+							$("#reg_info_file_text").hide();
+						}else{
+							$("#reg_info_file_text").html('请上传名片').show();
+							return false;
+						};	
+						//信息提交接口
+						alert("成功");			
+					},
+					funerr:function(){//不可提交回调
+						if($("#reg_info_file_base64").attr("src")){
+							$("#reg_info_file_text").hide();
+						}else{
+							$("#reg_info_file_text").html('请上传名片').show();
+							return false;
+						};	
+					},
+                    funerrlist:function(errlist){
+                        $('#'+ errlist[0]).focus();
+                    }	
+				}
+			);
+			tbdValidate(
+				regconfig2,
+				{
+					elesubmit:"getPhone",//提交按钮
+					funsubmit:function(){//验证通过可提交回调	
+							
+						var phone = $("#login_phone").val();
+						$("#login_wx").val(phone);
+						
+					},
+					funerr:function(){//不可提交回调
+
+					},
+                    funerrlist:function(errlist){
+                        $('#'+ errlist[0]).focus();
+                    }	
+				
+				}
+			);
+			//end
+			//demo3
+			//获取短信验证码
+			var mesdong=null;
+			var mestime=60;
+			$("#reg_mescode_btn").click(function(){	
+				var phoneval=$.trim($("#login_phone").val());
+				if(regconfig[0].rule[0].reg.test(phoneval)){
+					$("#err_phone_text").hide();				
+				}else{			
+					$("#err_phone_text").html(regconfig[0].rule[0].text).show();
+					$("#login_phone").focus();
+					return false
+				};
+				if(regconfig[0].rule[1].reg.test(phoneval)){
+					$("#err_phone_text").hide();				
+				}else{
+					$("#login_phone").focus();
+					$("#err_phone_text").html(regconfig[0].rule[1].text).show();
+					return false
+				};
+				
+				if($(this).attr('able')=="able"){//发送
+					sendVcode();
+					$(this).attr('able',"disable");
+					$(this).css('cursor','not-allowed');
+					$(this).html(mestime+"s");
+					mesdong=setInterval(function(){//倒计时
+						mestime-=1;
+						if(mestime<0){
+							$("#reg_mescode_btn").attr('able',"able");
+							$("#reg_mescode_btn").css('cursor','pointer');
+							$("#reg_mescode_btn").html('获取验证码');
+							mestime=60;
+							clearInterval(mesdong);
+						}else{
+							$("#reg_mescode_btn").html(mestime+"s");			
+						};
+					},1000);
+					//短信发送接口
+					
+				}else{
+					
+				};
+			});	
+	
+			$("#areaAdd").click(function(){	
+				
+				var province = $("#province").val();
+				var city = $("#city").val();
+				var district = $("#district").val();
+				if(!(province && city && district)){
+					return false;
+				}
+				var showArea;
+				if(district){
+					showArea = province +'-'+ city + '-' +district;
+				}else{
+					showArea = province +'-'+ city
+				}
+				var areaHtml = "<div class='areabox'>"+"<span class='getArea'>"+showArea+"</span>"+"<div class='spanbox' onClick>X</div></div>"
+				$("#appeadDiv").append(areaHtml)
+				$("#areaDiv").show();
+				
+				
+			});	
+			// xue
+			var arr=[],str='入门',adress='';
+			// 多选
+			$("div#en").on("click","a",function(){      //只需要找到你点击的是哪个ul里面的就行
+				if($(this).hasClass("checkbox-active")){
+					$(this).removeClass("checkbox-active");
+					arr.splice(arr.indexOf($(this).text()),1);
+				}else{
+					$(this).addClass("checkbox-active");
+					arr.push($(this).text());
+				}
+			});
+			// 单选
+			$("div#radio").on("click","a",function(){      //只需要找到你点击的是哪个ul里面的就行
+				$(this).addClass("checkbox-active").siblings().removeClass("checkbox-active");
+				str=$(this).text()
+			});
+			// selectAdress
+			$("ul#selectAdress").on("click","li",function(){      //只需要找到你点击的是哪个ul里面的就行
+				$(this).addClass("adressActive").siblings().removeClass("adressActive");
+				adressActive=$(this).text()
+			});
+			// 监听tab页签的切换
+			$('#myTab a').click(function (e) {
+				e.preventDefault();//阻止a链接的跳转行为
+				console.log($(this).text())
+				if($(this).text()=="教师外派"){
+					adress=1
+				}else{
+					adress=2
+				}
+				console.log(adress)
+			});
+			// 时间的选择
+			var mon=[],Tues=[],wed=[],Thur=[],Fri=[],sat=[],sun=[]
+			$("#Mon").on("click","li",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					mon.splice(mon.indexOf($(this).attr('name')),1);
+				}else{
+					$(this).addClass("dd-active");
+					mon.push($(this).attr('name'));
+				}
+				console.log(mon)
+			})
+			$("#Tues").on("click","li",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					Tues.splice(Tues.indexOf($(this).attr('name')),1);
+				}else{
+					$(this).addClass("dd-active");
+					Tues.push($(this).attr('name'));
+				}
+				console.log(Tues)
+			})
+			$("#wed").on("click","li",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					wed.splice(wed.indexOf($(this).attr('name')),1);
+				}else{
+					$(this).addClass("dd-active");
+					wed.push($(this).attr('name'));
+				}
+				console.log(wed)
+			})
+			$("#Thur").on("click","li",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					Thur.splice(Thur.indexOf($(this).attr('name')),1);
+				}else{
+					$(this).addClass("dd-active");
+					Thur.push($(this).attr('name'));
+				}
+				console.log(mon)
+			})
+			$("#Fri").on("click","li",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					Fri.splice(Fri.indexOf($(this).attr('name')),1);
+				}else{
+					$(this).addClass("dd-active");
+					Fri.push($(this).attr('name'));
+				}
+				console.log(Fri)
+			})
+			$("#sat").on("click","li",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					sat.splice(sat.indexOf($(this).attr('name')),1);
+				}else{
+					$(this).addClass("dd-active");
+					sat.push($(this).attr('name'));
+				}
+				console.log(sat)
+			})
+			$("#sun").on("click","li",function(){
+				if($(this).hasClass("dd-active")){
+					$(this).removeClass("dd-active");
+					sun.splice(sun.indexOf($(this).attr('name')),1);
+				}else{
+					$(this).addClass("dd-active");
+					sun.push($(this).attr('name'));
+				}
+				console.log(sun)
+			})
+			
+			
+		});
+		
+		function getVbapiUrl(){
+// 			return "http://192.168.1.158:8080/vbapi/";
+// 			return "http://localhost:8080/vbapi/";
+			return "http://join.viivbook.net/vbapi/";
+
+		}		
+		function sendVcode(){
+			$.ajax({
+				type : "POST",
+				url : getVbapiUrl()+"smsCode.do?stuPhone="+$("#login_phone").val(),
+			    dataType : "json",
+				success : function(data){
+					if("success" == data.resultType){
+				    	
+					}
+		    	},
+			});
+		}
+		function saveStu(){
+			var param={};
+			param.stuName = $("#login_name").val();
+			param.stuPhone = $("#login_phone").val();
+			param.stuWx = $("#login_wx").val();
+			param.stuTime = $("#login_info").val();
+			param.stuAddress = $("#login_time").val();
+			param.vcode = $("#login_mescode").val();
+			$.ajax({
+				type : "POST",
+				url : getVbapiUrl()+"saveStu.do",
+				data : param,
+			    dataType : "json",
+				success : function(data){
+					if("success" == data.resultType){
+						var url = getVbapiUrl()+"sec.html";
+						window.location.href = url;
+					}else{
+						$("#err_mescode_text").show();
+					}
+		    	},
+			});
+		}
+	</script>
+</body>
+</html>
